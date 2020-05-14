@@ -125,14 +125,14 @@
 
   > 全局前置守卫   ` router.beforeEach` 注册一个全局前置守卫
   >
-  > ````
+  > ````javascript
   > router.beforeEach((to,from,next)=>{  //...  })
-  > 确保要调用next方法 否则狗子就不会被resolved
+  > 确保要调用next方法 否则钩子就不会被resolved
   > ````
   >
   > 组件内的守卫`beforeRouterEnter`     `beforeRouteUpdate`    `beforeRouteLeave`
   >
-  > ```
+  > ```js
   > const Foo = {
   > 	template:'...',
   > 	beforeRouterEnter(to,from,next){ 在渲染组件的对应路由被confirm前调用/// 不能获取组件实例 this   守卫执行前 组件还没有被创建 /// 传递一个回调给next来访问组件实例
@@ -147,7 +147,7 @@
 
 - 路由中  meta 字段  可以是对象 数组  设置布尔值等来进行相关判断
 
-  ```
+  ```js
   {
   	path:'/user',
   	name: user,
@@ -164,7 +164,7 @@
 
 - 过渡动效 `transtion`
 
-  ```
+  ```js
   <transtion :name='transtionName'>
   	<router-view> </router-view>
   </transtion>
